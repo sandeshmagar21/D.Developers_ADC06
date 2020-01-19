@@ -1,2 +1,2 @@
 # D.Developers
-Group Name:  D.Developers_ADC06
+Group Name:  D.Developers

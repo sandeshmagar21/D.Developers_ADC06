@@ -1,0 +1,590 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GYM App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Qsn: not support, have to find out -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="{% static 'bootstrap/jquery/jquery.js' %}"> </script>
+    <script type ="text/JavaScript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"> </script>
+    <script src="{% static 'bootstrap/js/query.js' %}"> </script>
+</head>
+<body>
+
+  <nav class="navbar navbar-light" style="background-color: #00000093; border-width:14px;border-color:rgb(88, 88, 44);border-style:groove;border-spacing:30px;border-radius:5px;"class="navbar navbar-light">
+    <div class="pos-f-t">
+        <div class="dropdown-menu" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <a class="btn btn-outline-warning" href="{% url 'index' %}" >People Workout Images</a>
+            <a href="{% url 'sachin' %}" class="btn btn-outline-warning" >Upload Workout Images</a>
+            <a href="{% url 'admin:index' %}" class = 'btn btn-outline-warning' >Admin</a>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-yellow">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>    
+        </nav>
+      </div>
+        <a class="btn btn-outline-warning" href="{% url 'home' %}" >Home</a>
+        <a class="btn btn-outline-warning" href="{% url 'index' %}" >Gallery</a>
+        <a class="btn btn-outline-warning" href="{% url 'index' %}" >Service</a>
+        <a class="btn btn-outline-warning" href="{% url 'index' %}" >Schedule</a>
+        <a class="btn btn-outline-warning" href="{% url 'index' %}" >OnlineCourse</a>
+        <a class="btn btn-outline-warning" href="{% url 'contact' %}" >Contact</a>
+        <form action = "search/" method ="GET"  class="form-inline my-2 my-lg-0">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="text"   name = "hacsac" placeholder="Search..." aria-label="Search">
+          <button href="{% url 'khadka' %}" class=""btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu dropdown-menu-right bg-dark p-4">
+              <a class="btn btn-outline-warning" href="{% url 'hacker' %}" >Sign Up</a>
+              <a class="btn btn-outline-warning" href="{% url 'freddie' %}" >Login </a>
+              <a class="btn btn-outline-warning" href="{% url 'logout' %}" >Logout </a>
+          </div>
+        </div>
+    
+    
+        <!-- For Search Button-->
+        <!-- <form action = "search/" method ="GET"  class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="text"   name = "hacsac" placeholder="Search..." aria-label="Search">
+            <button href="{% url 'khadka' %}" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+    </nav>
+
+    <section class="Home">
+        <div class="container">
+      <h1><strong>  The Real Workout Starts
+          <span>When You Want To Stop..</strong> </span>
+      </h1>
+                 </div>
+        </section>
+        <div class="container">
+          <section class="home-about">
+            <div class="home-about-textbox">
+              <h1>What We Do</h1>
+              <p>
+                <strong>We provide  membership to our members especially for
+                  those who don't have enough time to come at gym also provide 24/7 support
+                  with our customer care. Also memebers can get different service
+                according to their membership plan this choosed. </strong>
+              </p>
+
+            </div>
+
+
+   </div>
+
+
+   <section class="cta">
+
+       <div class="container">
+           <h1 class="title title-cta">If you are Gym lover
+                <span>Then what are you waiting for, join us Today</span>
+                <div class="container-login100-form-btn">
+                  <a href="{% url 'hacker' %}" class="btn btn-dark " role="button" aria-pressed="true">Sign Up</a>
+                </div>           </h1>
+           <a href="Gallery.html" class="button button-dark">See Our Workout Videos and Pictures</a>
+       </div>
+   </section>
+</body>
+
+<footer>
+<div id="nap">
+Gadgets Nepal, Copyright &copy; 2018
+</div>
+
+</footer>
+</body>
+</html>
+
+<!-- <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+  *{
+    box-sizing: border-box;
+    transition: all linear 1050ms;
+  }
+    /* working inside body */
+  body{
+    margin:0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    backface-visibility: visible;
+    background-color:#bad2d9;
+    background-image: url(../image/sule-makaroglu-HzXDD6l7gW4-unsplash.jpg);
+  }
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  
+  }
+  
+  .port-item img{
+    border: 3px  solid #16b8b8;
+    border-radius: 3px;
+    padding: 2px;
+   }
+  
+  /*typography*/
+  h1 {
+    font-weight: 300;
+    font-size: 1.7rem;
+    margin-top: 0;
+  }
+  @media(min-width: 20rem){
+    h1{
+      font-size: 2rem;
+    }
+  
+  p {
+    margin-top: 0;
+    line-height: 1.5;
+  }
+  
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  
+  .container{
+    width:95%;
+    max-width: 70em;
+    margin: 0 auto;
+   /* position: absolute;
+    z-index: 2;*/
+  }
+  .title{
+    font-size: 2.5rem;
+    margin-bottom: 1.5em;
+  }
+  .title span{
+    font-weight: 300;
+    display: block;
+    font-size: .5em;
+  }
+  @media (min-width:55rem) {
+    p{
+      font-size: 1.2rem;
+      line-height: normal;
+    }
+  .title{
+    font-size: 3rem;
+  }
+  }
+  
+  
+  /*button*/
+  
+  .button{
+    display:inline-block;
+    font-size:1.5erm;
+    text-decoration:  none;
+    text-transform: uppercase;
+    border-width: 1.5px;
+    border-style: solid;
+    padding: .5em 1.5em;
+    float:middle;
+  
+  }
+  @media (min-width:60rem) {
+    .button{
+      font-size: 1rem;
+    }
+  
+  }
+  .button-small{
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  /* to change the button color*/
+  .button-accent{
+    color:  white;
+    border-color:black;
+    padding-left: 2vh;
+    text-shadow: 12;
+  }
+  
+  .button-accent: hover;
+  .button-accent: focus{
+    background:#00ff6c;
+    color:#232323;
+  }
+  
+  /*header*/
+  
+  header{
+   position:absolute;/*
+  left: 0;
+  padding: 0;
+  margin-top: lem; */
+  display: flex;
+  width: 100%;
+  height:200px;
+  justify-content: space-around;
+  align-items: center;
+  }
+  header nav ul li{
+    margin-right: 40px;
+  
+  }
+  
+  header li{
+  float: left;
+  display: inline;
+  padding:0 20px 0 20px;
+  /*yo chai afai la garko  */
+  }
+  
+  ul{
+    margin: 3;
+    padding: 3;
+    list-style: none;
+  }
+   nav li{
+     display:inline-flex;
+     margin: lem;
+     float: left;
+   }
+  
+  nav a {
+    font-weight: 900;
+    text-decoration: none;
+    padding: .5em;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: 10;
+     float: right;
+  
+  
+  } nav {
+    float:right;
+    margin-top:10px;
+  }
+  nav button button-accent{
+    float:middle;
+  }
+  
+  nav a:hover,
+  nav a:focus {
+    color: #ddd;
+  }
+  .logo{
+    height:200px;
+    width: 100px;
+  }
+  @media (min-width:55rem) {
+  #logo{
+    float:left;
+     border: 3px solid none;
+    border-radius: 3px;
+    padding: 2px;
+  
+  }
+  /*Service*/
+  
+  .five{
+  background-image: url(../image/sule-makaroglu-HzXDD6l7gW4-unsplash.jpg);
+  padding: 10em 0;
+  color: #FFF;
+  background-size: cover;
+  background-position: center;
+  }
+  /*service*/
+  @media (min-width:30rem){
+    .five{
+      height:110vh;
+      padding-top: 30vh;
+    }
+  }
+  section .topi  img{
+          float:right;
+          border-style: solid;
+          border-color:#00FA9A;
+          border-radius: 25px;
+  
+                          }
+  
+  
+  /*service*/
+  .sandesh01{
+  background-image: url(../image/man-holding-brown-rope-3253501.jpg) , url(../image/mac.jpg) ;
+  padding: 10em 0;
+  color: white;
+  text-decoration: underline;
+  background-size: cover;
+  background-position: center;
+  }
+  @media (min-width:60rem){
+    .sandesh01{
+      height:100vh;
+      padding-top: 40vh;
+    }
+  }
+  ::placeholder { /* Chrome, */
+    color: black;
+    opacity: 1;
+  }
+  .sandesh{
+    padding:5;
+  }
+  
+  
+  .sandesh01{
+  display: flex;
+  }
+  div{
+  border: 1px; #ccc solid;
+  padding:10px;
+  }
+  .box-1{
+  flex:auto;
+  }
+  .sandesh01{
+  position:static;
+     max-width: 100%;
+     margin:flex;
+  
+  }
+  .sandesh01 .sandesh02 {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  /*Home-One*/
+  .Home{
+  background-image: url(../image/bg_3.jpg);
+  padding: 8em 0;
+  color: #FFF;
+  background-size: cover;
+  background-position: center;
+  }
+  
+  @media (min-width:4rem){
+    .Home{
+      height:120vh;
+      padding-top: 55vh;
+    }
+  }
+  .home-about-textbox {
+    background-color: #232323 ;
+    padding: 4em;
+    width: 100vw;
+    margin-left: -2.5%;
+    outline: 2px solid #2F85DB;
+    outline-offset: -2.5em;
+    color: #FFF;
+    position:relative;
+  }
+  
+  .home-about-textbox h1 {
+    color: #00ff6c;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .75em;
+    background: #232323;
+    padding: 0 .145em;
+  }
+  
+  
+  
+  /*about*/
+  .about{
+  background-image: url(../image/people-2572265.jpg);
+  padding: 10em 0;
+  color: #FFF;
+  background-size: cover;
+  background-position: center;
+  }
+  /*about */
+  @media (min-width:60rem){
+    .about{
+      height:100vh;
+      padding-top: 40vh;
+    }
+  }
+  .all{
+  flex:right;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  #anm {
+    font-size:48px;
+    color:red;
+    flow-from: inherit;
+  
+  }
+  
+  
+  /*Gallery*/
+  .Gallery{
+    /*z-index: -1;*/
+  background-image: url(../image/alora-griffiths-aVrZMPgN_Vg-unsplash.jpg);
+  padding: 10em 0;
+  color: #FFF;
+  background-size: cover;
+  background-position: center;
+  }
+  /*Gallery */
+  @media (min-width:60rem){
+    .Gallery{
+      height:100vh;
+      padding-top: 70vh;
+    }
+  }
+  
+  
+  
+  .home-about{
+    background-image:url(..//image/camera/woman-doing-crossfit-2294400.jpg);
+    padding-bottom: 10em;
+    background-repeat: no-no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+  }
+  
+  .home-about-textbox {
+    width: 55%;
+    margin-left: -7.5%;
+    text-align: left;
+    top:-12em;
+    left: -1em;
+    box-shadow: 0 0 3em 0 rgba(0,0,0,.25);
+    padding: 5em;
+    outline-offset: -2em;
+  }
+  
+  .home-about-textbox h1 {
+    top: .75em;
+    left:3.25rem;
+    transform:translateX(0);
+  }
+  p:last-of-type{
+    margin-bottom: 2;
+  }
+  
+  #nap{
+  background-color: #7F7676;
+  }
+  \
+  /*image item*/
+  .portfolio{
+    margin: 3em 0;
+  }
+  .port-item{
+  margin: 0;
+  position: relative;
+  /*z-index: 1;
+  */}
+  .port-item img{
+    display: block;
+  }
+  .port-desc{
+    position: absolute;
+    z-index: 100;
+    bottom: 0em;
+    left:0em;
+    right:0em;
+    color: white;
+    background: rgba(0,0,0,.6);
+    padding:1em;
+  
+  }
+  .port-desc p{
+    margin:0
+  }
+  @media(min-width: 40rem){
+    .port-item{
+      width:40%;
+      display:inline-grid;
+      overflow:hidden;
+    }
+    .port-desc{
+      transform: translate(150%);
+    }
+    .port-item:hover .port-desc{
+    transform : translateX(0%);
+  }
+  }
+  /*gallery*/
+  .title title-cta{
+    float:right;
+  }
+  
+  #cta{
+    clear: both;
+    position: relative;
+    bottom: -1000px;
+  }
+  #Daju1{
+   clear: both;
+    position: relative;
+    bottom: -1400px;
+  }
+  #Daju2{
+    clear: both;
+     position: relative;
+     bottom: -30px;
+  
+  }
+  #Daju3{
+    clear: both;
+     position: relative;
+     bottom: -30px;
+     }
+  
+  #Daju4{
+    clear: both;
+     position: relative;
+     bottom: -30px;
+  }
+  #daju5{
+    clear: both;
+     position: relative;
+     bottom: -30px;
+  }
+  #daju6{
+  
+    clear: both;
+     position: relative;
+     bottom: -30px;
+  }
+  
+
+</style> -->

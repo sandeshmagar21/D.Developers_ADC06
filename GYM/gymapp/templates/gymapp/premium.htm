@@ -37,25 +37,34 @@
       </button>    
     </nav>
   </div>
-    <a class="btn btn-outline-warning" href="{% url 'index' %}" >Home</a>
+    <a class="btn btn-outline-warning" href="{% url 'home' %}" >Home</a>
     <a class="btn btn-outline-warning" href="{% url 'index' %}" >Gallery</a>
     <a class="btn btn-outline-warning" href="{% url 'index' %}" >Service</a>
     <a class="btn btn-outline-warning" href="{% url 'index' %}" >Schedule</a>
     <a class="btn btn-outline-warning" href="{% url 'index' %}" >OnlineCourse</a>
-    <a class="btn btn-outline-warning" href="{% url 'index' %}" >Contact</a>
-    <a class="btn btn-outline-warning" href="{% url 'hacker' %}" >Sign Up</a>
-    <a class="btn btn-outline-warning" href="{% url 'freddie' %}" >Login </a>
-    <a class="btn btn-outline-warning" href="{% url 'logout' %}" >Logout </a>
-
-
+    <a class="btn btn-outline-warning" href="{% url 'contact' %}" >Contact</a>
+    <form action = "search/" method ="GET"  class="form-inline my-2 my-lg-0">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="text"   name = "hacsac" placeholder="Search..." aria-label="Search">
+      <button href="{% url 'khadka' %}" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <div class="dropdown-menu dropdown-menu-right bg-dark p-4">
+          <a class="btn btn-outline-warning" href="{% url 'hacker' %}" >Sign Up</a>
+          <a class="btn btn-outline-warning" href="{% url 'freddie' %}" >Login </a>
+          <a class="btn btn-outline-warning" href="{% url 'logout' %}" >Logout </a>
+      </div>
+    </div>
 
 
     <!-- For Search Button-->
-    <form action = "search/" method ="GET"  class="form-inline my-2 my-lg-0">
+    <!-- <form action = "search/" method ="GET"  class="form-inline my-2 my-lg-0">
         {% csrf_token %}
         <input class="form-control mr-sm-2" type="text"   name = "hacsac" placeholder="Search..." aria-label="Search">
         <button href="{% url 'khadka' %}" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
 </nav>
 <br>
 

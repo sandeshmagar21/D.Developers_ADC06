@@ -86,7 +86,7 @@ def search_function_hai(request):
 
 def view_register_users(request):
     if request.method =="GET":
-        return render(request,'Registration/signup.html')
+        return render(request,'Registration/signup.htm')
     else:
         print(request.POST)
         user = User.objects.create_user(username=request.POST['username'],password=request.POST['password'],email=request.POST['email'])
@@ -97,19 +97,33 @@ def view_register_users(request):
 
 def view_authenticate_users(request):
     if request.method =="GET":
-        return render (request,'Login/login.html')
+        return render (request,'Login/login.htm')
     else:
         print(request.POST)
         user = authenticate(username=request.POST['username'],password=request.POST['password'])
         print(user)
         if user is not None:
             login(request,user)
-            return HttpResponse("Welcome to our GYM")
-            return render(request,"gymapp/premium.htm")
-            return HttpResponse("Authentication Sucess")
+            
+            # return render(request,'premium.htm')
+<<<<<<< Updated upstream
+            return render(request,"login/home.htm")
+=======
+            return render(request,"login/logged.htm")
+>>>>>>> Stashed changes
+            # return HttpResponse("Welcome to our GYM")
+            
+            # return HttpResponse("Authentication Sucess")
         else:
             return HttpResponse("Authentication Failed")
 
 def logout(request):
     logout(request)
-    return HttpResponse("You are logout")            
+    return HttpResponse("You are logout")      
+
+
+def contact(request):
+    return render(request,'gymapp/contact.htm')      
+
+def home(request):
+  return render(request,'login/home.htm')

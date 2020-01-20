@@ -12,7 +12,9 @@ urlpatterns = [
     path('search/', search_function_hai, name="khadka"),
     path('register/', view_register_users , name="hacker"),
     path('login/',view_authenticate_users, name = "freddie"),
-    path('logout/', logout, name = "logout")
+    path('logout/', logout, name = "logout"),
+    path('contact', contact, name='contact'),
+    path('home',home, name='home')
     
 ]
 

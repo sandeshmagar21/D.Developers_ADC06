@@ -106,7 +106,11 @@ def view_authenticate_users(request):
             login(request,user)
             
             # return render(request,'premium.htm')
+<<<<<<< Updated upstream
             return render(request,"login/home.htm")
+=======
+            return render(request,"login/logged.htm")
+>>>>>>> Stashed changes
             # return HttpResponse("Welcome to our GYM")
             
             # return HttpResponse("Authentication Sucess")

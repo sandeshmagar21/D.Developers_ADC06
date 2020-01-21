@@ -22,3 +22,9 @@ class Gym(models.Model):
     def workoutdes_field_blank(self):
         return (self.workoutdesc != True ) and (len(self.workoutdesc) <= 50)
 
+
+
+
+
+
+

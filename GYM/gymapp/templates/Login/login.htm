@@ -15,11 +15,12 @@
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/select2/select2.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{%static 'login/css/util.css' %}">
 	<link rel="stylesheet" type="text/css" href="{%static 'login/css/main.css' %}">
+	
 
 </head>
-<body style="background-image: url(../image/bg_3.jpg);">
+<body style="background-color:red;">
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" >
 			<div class="wrap-login100">
 				<form action =""  method ="POST" class="login100-form validate-form">
 					{% csrf_token %}
@@ -30,7 +31,7 @@
 						Log in
 					</span>
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="username" placeholder="UserName">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
@@ -49,16 +50,6 @@
 							Login
 						</button>
 					</div>
-					<br>
-					<div class="container-login100-form-btn">
-						If You Are new Here <br> then what are waiting for <br> Singup 
-					</div>
-					<br>
-					<div class="container-login100-form-btn">
-						<a href="{% url 'hacker' %}" class="btn btn-dark " role="button" aria-pressed="true">Sign Up</a>
-					</div>
-
-					<div class="d-inline-flex p-2 position-static">I'm an inline flexbox container!</div>
 
 					<div class="text-center p-t-90">
 						<a class="txt1" href="{% url 'hacker' %}">

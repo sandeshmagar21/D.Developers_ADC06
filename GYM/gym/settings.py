@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gymapp'
+    'gymapp',
+    'restapi'
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,6 @@ STATICFILES_DIR = os.path.join(BASE_DIR, 'gymapp/static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'OuterFiles')
 
 
-
-MEDIA_URL = 'media/'
+# MEDIA_URL = 'media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
